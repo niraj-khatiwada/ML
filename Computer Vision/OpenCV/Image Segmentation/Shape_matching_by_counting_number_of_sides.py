@@ -1,6 +1,5 @@
 import cv2
-import numpy as np
-from statistics import mean
+
 
 feature_image = cv2.imread("C:/Users/niraj/Anaconda3/Projects/Computer Vision/OpenCV/images/4star.jpg")
 feature_image_copy = feature_image.copy()
