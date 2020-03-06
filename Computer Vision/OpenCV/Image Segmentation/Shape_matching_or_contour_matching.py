@@ -39,6 +39,7 @@ for i in sorted_contrours_target[:len(sorted_contrours_target)-1]:
     #Approximating Contours
     accuracy = 0.05 * cv2.arcLength(i, closed= True)
     approx = cv2.approxPolyDP(i, accuracy, closed= True)
+    print(len(approx))
     #Shape matching
     shape_match = cv2.matchShapes(actual_contour, approx, 2, 0.0)
     print(shape_match)
