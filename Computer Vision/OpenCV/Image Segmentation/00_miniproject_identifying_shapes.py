@@ -53,6 +53,7 @@ for i in sorted_target[:len(sorted_target) - 1]:
             matched_reactangle.append(i)
 
 cv2.drawContours(target_image, matched_reactangle, -1, (0, 0, 255), 1)
+cv2.putText(target_image, "Rectangle", (x+10, y+10), cv2.FONT_HERSHEY_PLAIN, 1, (0,255,0))
 cv2.imshow("Matched", target_image)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
