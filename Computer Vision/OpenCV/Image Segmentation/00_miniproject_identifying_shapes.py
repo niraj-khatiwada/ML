@@ -49,11 +49,14 @@ for i in sorted_target[:len(sorted_target) - 1]:
         cv2.imshow("----feature---", feature_image_copy)
         if len(approx_target) == len(approx_feature) == 4:
             x, y, w, h = cv2.boundingRect(i)
+            
             cv2.rectangle(target_image_copy, (x,y), (x+w, y+h), (0,255,20), -1)
             matched_reactangle.append(i)
 
 cv2.drawContours(target_image, matched_reactangle, -1, (0, 0, 255), 1)
-cv2.putText(target_image, "Rectangle", (x+10, y+10), cv2.FONT_HERSHEY_PLAIN, 1, (0,255,0))
+if abs(w) != abs(h):
+    cv2.putText(target_image, "Rectangle", (x+10, y+10), cv2.FONT_HERSHEY_PLAIN, 1, (0,255,0))
+    print("w & h", w, h)
 cv2.imshow("Matched", target_image)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
