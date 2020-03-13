@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items>
+    <item>
+        <Country>China</Country>
+        <Title>Currently Infected Patients</Title>
+        <Infected Patient Number>13,486</Infected Patient Number>
+    </item>
+    <item>
+        <Country>China</Country>
+        <Title>Cases which had an outcome:</Title>
+        <Infected Patient Number>67,329</Infected Patient Number>
+    </item>
+    <item>
+        <Country>France</Country>
+        <Title>Currently Infected Patients</Title>
+        <Infected Patient Number>2,803</Infected Patient Number>
+    </item>
+    <item>
+        <Country>France</Country>
+        <Title>Cases which had an outcome:</Title>
+        <Infected Patient Number>73</Infected Patient Number>
+    </item>
+    <item>
+        <Country>Iran</Country>
+        <Title>Currently Infected Patients</Title>
+        <Infected Patient Number>7,321</Infected Patient Number>
+    </item>
+    <item>
+        <Country>Iran</Country>
+        <Title>Cases which had an outcome:</Title>
+        <Infected Patient Number>4,043</Infected Patient Number>
+    </item>
+    <item>
+        <Country>USA</Country>
+        <Title>Currently Infected Patients</Title>
+        <Infected Patient Number>1,792</Infected Patient Number>
+    </item>
+    <item>
+        <Country>USA</Country>
+        <Title>Cases which had an outcome:</Title>
+        <Infected Patient Number>72</Infected Patient Number>
+    </item>
+    <item>
+        <Country>S. Korea</Country>
+        <Title>Currently Infected Patients</Title>
+        <Infected Patient Number>7,398</Infected Patient Number>
+    </item>
+    <item>
+        <Country>S. Korea</Country>
+        <Title>Cases which had an outcome:</Title>
+        <Infected Patient Number>581</Infected Patient Number>
+    </item>
+    <item>
+        <Country>Germany</Country>
+        <Title>Currently Infected Patients</Title>
+        <Infected Patient Number>3,427</Infected Patient Number>
+    </item>
+    <item>
+        <Country>Germany</Country>
+        <Title>Cases which had an outcome:</Title>
+        <Infected Patient Number>54</Infected Patient Number>
+    </item>
+    <item>
+        <Country>Spain</Country>
+        <Title>Currently Infected Patients</Title>
+        <Infected Patient Number>4,019</Infected Patient Number>
+    </item>
+    <item>
+        <Country>Spain</Country>
+        <Title>Cases which had an outcome:</Title>
+        <Infected Patient Number>315</Infected Patient Number>
+    </item>
+    <item>
+        <Country>Italy</Country>
+        <Title>Currently Infected Patients</Title>
+        <Infected Patient Number>12,839</Infected Patient Number>
+    </item>
+    <item>
+        <Country>Italy</Country>
+        <Title>Cases which had an outcome:</Title>
+        <Infected Patient Number>2,274</Infected Patient Number>
+    </item>
+</items>
