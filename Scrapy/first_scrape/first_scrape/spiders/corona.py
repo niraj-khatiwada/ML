@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import scrapy
 import logging
-
+from scrapy_djan
 
 class CoronaSpider(scrapy.Spider):
     name = 'corona'
