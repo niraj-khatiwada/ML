@@ -1,22 +1,38 @@
 # -*- coding: utf-8 -*-
 import scrapy
 import logging
+import re
 
 class KajiSpider(scrapy.Spider):
     name = 'kaji'
     allowed_domains = ['www.kajidigital.com']
-    start_urls = ['https://www.kajidigital.com/shop']
-    def parse(self, response):
-        products = response.xpath('//ul[@class="woo-entry-inner clr"]/li[@class="title"]')
+    page_num = 1
+    headers = { 'User-Agent': 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Mobile Safari/537.36' }
 
-        for product in products:
+    def start_requests(self):
+        yield scrapy.Request(url= 'https://kajidigital.com/shop/?product-page=1', callback= self.parse, 
+        headers= KajiSpider.headers)
+
+    def parse(self, response):
+
+        for product in response.xpath('//ul[@class="woo-entry-inner clr"]/li[@class="title"]'):
             yield{
                 'Product Name': product.xpath(".//a/text()").get(),
-                'Product Link': response.urljoin(url = product.xpath(".//a/@href").get())
+                'Product Link': response.urljoin(url = product.xpath(".//a/@href").get()),
+                "User-Agent": response.request.headers['User-Agent']
             }
 
-        next_page = response.urljoin(url = response.xpath('//a[@class="next page-numbers"]/@href').get())
+        next_page = response.xpath("//ul[@class='page-numbers']/li/a/@href").get()
 
-        if next_page:
-            yield scrapy.Request(url= next_page, callback= self.parse)
+        pattern = "\S*product-page=\d\S*"
+        print("Regexxxxxxxxxxxxxx", re.findall(pattern, next_page))
+        page_number = len(re.findall(pattern, next_page))
+        # print(next_page)
+
+        if KajiSpider.page_num <= page_number:
+            yield scrapy.Request(url = response.urljoin(next_page), callback= self.parse, dont_filter= True,  headers= KajiSpider.headers)
+            KajiSpider.page_num += 1
+
+
+       
         print("-----------------------------------------------------")
