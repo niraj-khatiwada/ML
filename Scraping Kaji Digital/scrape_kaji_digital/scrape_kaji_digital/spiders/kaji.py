@@ -15,11 +15,12 @@ class KajiSpider(scrapy.Spider):
 
     def parse(self, response):
 
-        for product in response.xpath('//ul[@class="woo-entry-inner clr"]/li[@class="title"]'):
+        for product in response.xpath('//ul[@class="woo-entry-inner clr"]'):
             yield{
-                'Product Name': product.xpath(".//a/text()").get(),
-                'Product Link': response.urljoin(url = product.xpath(".//a/@href").get()),
-                "User-Agent": response.request.headers['User-Agent']
+                'Product Name': product.xpath(".//li[@class='title']/a/text()").get(),
+                'Product Link': response.urljoin(url = product.xpath(".//li[@class='title']/a/@href").get()),
+                'Product-Image': response.xpath(".//li[@class='image-wrap']/div/a/noscript/img[@class='woo-entry-image-main']/@src").get(),
+                # "User-Agent": response.request.headers['User-Agent']
             }
 
         next_page = response.xpath("//ul[@class='page-numbers']/li/a/@href").get()
