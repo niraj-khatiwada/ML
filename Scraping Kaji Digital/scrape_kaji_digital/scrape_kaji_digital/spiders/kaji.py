@@ -15,5 +15,8 @@ class KajiSpider(scrapy.Spider):
                 'Product Link': response.urljoin(url = product.xpath(".//a/@href").get())
             }
 
-        
+        next_page = response.urljoin(url = response.xpath('//a[@class="next page-numbers"]/@href').get())
+
+        if next_page:
+            yield scrapy.Request(url= next_page, callback= self.parse)
         print("-----------------------------------------------------")
