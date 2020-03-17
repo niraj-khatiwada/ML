@@ -10,5 +10,10 @@ import scrapy
 
 class ImdbItem(scrapy.Item):
     # define the fields for your item here like:
-    # name = scrapy.Field()
+    name = scrapy.Field()
+    Title = scrapy.Field()
+    Genre = scrapy.Field()
+    Released_Date = scrapy.Field()
+    Runtime = scrapy.Field()
+    Rating = scrapy.Field()
     pass
